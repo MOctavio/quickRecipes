@@ -1,0 +1,13 @@
+{
+    "name": "sandbox",
+    "version": "0.0.0",
+    "authors": "",
+    "private": true,
+    "dependencies": {
+        "angular": "~1.4",
+        "angular-ui-router": "^0.2.11",
+        "angular-animate": "~1.4"
+    },
+    "devDependencies": {},
+    "overrides": {}
+}
