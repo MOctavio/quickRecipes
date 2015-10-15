@@ -3,30 +3,30 @@ var plugins = require('gulp-load-plugins')();
 var del = require('del');
 var es = require('event-stream');
 var bowerFiles = require('main-bower-files');
-// var print = require('gulp-print');
 var Q = require('q');
+var karma = require('karma').server;
+var watch = require('gulp-watch');
 
 // == PATH STRINGS ========
 
 var paths = {
-    scripts: 'app/**/*.js',
-    styles: ['./app/**/*.css', './app/**/*.scss'],
-    images: './images/**/*',
-    index: './app/index.html',
-    partials: ['app/**/*.html', '!app/index.html'],
-    distDev: './dist.dev',
-    distProd: './dist.prod',
-    distScriptsProd: './dist.prod/scripts',
+    scripts: ['source/scripts/**/*.js', 'source/app.js'],
+    styles: ['./source/**/*.css', './source/**/*.scss'],
+    assets: ['./assets/**/*', './bower_components/font-awesome/fonts/'],
+    index: './source/index.html',
+    partials: ['source/**/*.html', '!source/index.html'],
+    bowerDir: './bower_components/',
+    directivesDir: './source/scripts/extensions/directives/',
+    distDev: './dist',
+    distProd: './dist',
+    distScripts: './dist/scripts',
+    distScriptsVendor: './dist/scripts/vendors',
     scriptsDevServer: 'devServer/**/*.js'
 };
 
 // == PIPE SEGMENTS ========
 
 var pipes = {};
-
-pipes.orderedVendorScripts = function() {
-    return plugins.order(['jquery.js', 'angular.js']);
-};
 
 pipes.orderedAppScripts = function() {
     return plugins.angularFilesort();
@@ -40,39 +40,37 @@ pipes.minifiedFileName = function() {
 
 pipes.validatedAppScripts = function() {
     return gulp.src(paths.scripts)
+        .pipe(plugins.plumber())
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('jshint-stylish'));
 };
 
 pipes.builtAppScriptsDev = function() {
     return pipes.validatedAppScripts()
-        .pipe(gulp.dest(paths.distDev));
+        .pipe(gulp.dest(paths.distScripts));
 };
 
 pipes.builtAppScriptsProd = function() {
-    var scriptedPartials = pipes.scriptedPartials();
-    var validatedAppScripts = pipes.validatedAppScripts();
 
-    return es.merge(scriptedPartials, validatedAppScripts)
+    return pipes.validatedAppScripts()
         .pipe(pipes.orderedAppScripts())
         .pipe(plugins.sourcemaps.init())
             .pipe(plugins.concat('app.min.js'))
             .pipe(plugins.uglify())
         .pipe(plugins.sourcemaps.write())
-        .pipe(gulp.dest(paths.distScriptsProd));
+        .pipe(gulp.dest(paths.distScripts));
 };
 
 pipes.builtVendorScriptsDev = function() {
     return gulp.src(bowerFiles())
-        .pipe(gulp.dest('dist.dev/bower_components'));
+        .pipe(gulp.dest(paths.distScriptsVendor));
 };
 
 pipes.builtVendorScriptsProd = function() {
-    return gulp.src(bowerFiles('**/*.js'))
-        .pipe(pipes.orderedVendorScripts())
+    return gulp.src(bowerFiles())
         .pipe(plugins.concat('vendor.min.js'))
         .pipe(plugins.uglify())
-        .pipe(gulp.dest(paths.distScriptsProd));
+        .pipe(gulp.dest(paths.distScripts));
 };
 
 pipes.validatedDevServerScripts = function() {
@@ -92,39 +90,56 @@ pipes.builtPartialsDev = function() {
         .pipe(gulp.dest(paths.distDev));
 };
 
-pipes.scriptedPartials = function() {
+pipes.builtPartialsProd = function() {
     return pipes.validatedPartials()
         .pipe(plugins.htmlhint.failReporter())
         .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}))
-        .pipe(plugins.ngHtml2js({
-            moduleName: "healthyGulpAngularApp"
-        }));
+        .pipe(gulp.dest(paths.distProd));
 };
 
 pipes.builtStylesDev = function() {
     return gulp.src(paths.styles)
-        .pipe(plugins.sass())
+        .pipe(plugins.plumber())
+        .pipe(plugins.sass(
+            {
+                includePaths: [
+                    paths.bowerDir + 'bootstrap-sass/assets/stylesheets',
+                    paths.bowerDir + 'font-awesome/scss',
+                    require('node-bourbon').includePaths,
+                    paths.directivesDir
+                ],
+                sourceComments: 'normal'
+            }))
         .pipe(gulp.dest(paths.distDev));
 };
 
 pipes.builtStylesProd = function() {
     return gulp.src(paths.styles)
         .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.sass())
+            .pipe(plugins.plumber())
+            .pipe(plugins.sass(
+                {
+                    includePaths: [
+                        paths.bowerDir + 'bootstrap-sass/assets/stylesheets',
+                        paths.bowerDir + 'font-awesome/scss',
+                        require('node-bourbon').includePaths,
+                        paths.directivesDir
+                    ]
+                }))
             .pipe(plugins.minifyCss())
         .pipe(plugins.sourcemaps.write())
         .pipe(pipes.minifiedFileName())
         .pipe(gulp.dest(paths.distProd));
 };
 
-pipes.processedImagesDev = function() {
-    return gulp.src(paths.images)
-        .pipe(gulp.dest(paths.distDev + '/images/'));
+pipes.icons = function() {
+    return gulp.src(paths.bowerDir + '/font-awesome/fonts/**.*')
+        .pipe(gulp.dest(paths.distDev + '/assets/fonts/font-awesome'));
 };
 
-pipes.processedImagesProd = function() {
-    return gulp.src(paths.images)
-        .pipe(gulp.dest(paths.distProd + '/images/'));
+pipes.processedAssets = function() {
+    return gulp.src(paths.assets)
+        .pipe(gulp.dest(paths.distDev + '/assets/'));
 };
 
 pipes.validatedIndex = function() {
@@ -135,8 +150,7 @@ pipes.validatedIndex = function() {
 
 pipes.builtIndexDev = function() {
 
-    var orderedVendorScripts = pipes.builtVendorScriptsDev()
-        .pipe(pipes.orderedVendorScripts());
+    var orderedVendorScripts = pipes.builtVendorScriptsDev();
 
     var orderedAppScripts = pipes.builtAppScriptsDev()
         .pipe(pipes.orderedAppScripts());
@@ -156,6 +170,7 @@ pipes.builtIndexProd = function() {
     var vendorScripts = pipes.builtVendorScriptsProd();
     var appScripts = pipes.builtAppScriptsProd();
     var appStyles = pipes.builtStylesProd();
+    var appPartials = pipes.builtPartialsProd();
 
     return pipes.validatedIndex()
         .pipe(gulp.dest(paths.distProd)) // write first to get relative path for inject
@@ -167,14 +182,25 @@ pipes.builtIndexProd = function() {
 };
 
 pipes.builtAppDev = function() {
-    return es.merge(pipes.builtIndexDev(), pipes.builtPartialsDev(), pipes.processedImagesDev());
+    return es.merge(pipes.builtIndexDev(), pipes.builtPartialsDev(), pipes.processedAssets(), pipes.icons());
 };
 
 pipes.builtAppProd = function() {
-    return es.merge(pipes.builtIndexProd(), pipes.processedImagesProd());
+    return es.merge(pipes.builtIndexProd(), pipes.processedAssets(), pipes.icons());
+};
+
+pipes.unitTests = function(done){
+    return karma.start({
+        configFile: __dirname + '/karma.conf.js'
+    },function(){
+      done();
+    });
 };
 
 // == TASKS ========
+
+//executes the unit tests
+gulp.task('unit-test', pipes.unitTests);
 
 // removes all compiled dev files
 gulp.task('clean-dev', function() {
@@ -249,7 +275,7 @@ gulp.task('clean-build-app-dev', ['clean-dev'], pipes.builtAppDev);
 gulp.task('clean-build-app-prod', ['clean-prod'], pipes.builtAppProd);
 
 // clean, build, and watch live changes to the dev environment
-gulp.task('watch-dev', ['clean-build-app-dev', 'validate-devserver-scripts'], function() {
+gulp.task('default', ['clean-build-app-dev', 'validate-devserver-scripts'], function() {
 
     // start nodemon to auto-reload the dev server
     plugins.nodemon({ script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV : 'development'} })
@@ -262,33 +288,39 @@ gulp.task('watch-dev', ['clean-build-app-dev', 'validate-devserver-scripts'], fu
     plugins.livereload.listen({ start: true });
 
     // watch index
-    gulp.watch(paths.index, function() {
+    watch(paths.index, function() {
         return pipes.builtIndexDev()
             .pipe(plugins.livereload());
     });
 
     // watch app scripts
-    gulp.watch(paths.scripts, function() {
-        return pipes.builtAppScriptsDev()
+    watch(paths.scripts, function() {
+        return pipes.builtIndexDev()
             .pipe(plugins.livereload());
     });
 
     // watch html partials
-    gulp.watch(paths.partials, function() {
+    watch(paths.partials, function() {
         return pipes.builtPartialsDev()
             .pipe(plugins.livereload());
     });
 
     // watch styles
-    gulp.watch(paths.styles, function() {
-        return pipes.builtStylesDev()
+    watch(paths.styles, function() {
+        return pipes.builtIndexDev()
+            .pipe(plugins.livereload());
+    });
+
+    // watch assets
+    watch(paths.assets, function() {
+        return pipes.processedAssets()
             .pipe(plugins.livereload());
     });
 
 });
 
 // clean, build, and watch live changes to the prod environment
-gulp.task('watch-prod', ['clean-build-app-prod', 'validate-devserver-scripts'], function() {
+gulp.task('prod', ['clean-build-app-prod', 'validate-devserver-scripts'], function() {
 
     // start nodemon to auto-reload the dev server
     plugins.nodemon({ script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV : 'production'} })
@@ -301,30 +333,36 @@ gulp.task('watch-prod', ['clean-build-app-prod', 'validate-devserver-scripts'], 
     plugins.livereload.listen({start: true});
 
     // watch index
-    gulp.watch(paths.index, function() {
+    watch(paths.index, function() {
         return pipes.builtIndexProd()
             .pipe(plugins.livereload());
     });
 
     // watch app scripts
-    gulp.watch(paths.scripts, function() {
+    watch(paths.scripts, function() {
         return pipes.builtAppScriptsProd()
             .pipe(plugins.livereload());
     });
 
     // watch hhtml partials
-    gulp.watch(paths.partials, function() {
+    watch(paths.partials, function() {
         return pipes.builtAppScriptsProd()
             .pipe(plugins.livereload());
     });
 
     // watch styles
-    gulp.watch(paths.styles, function() {
+    watch(paths.styles, function() {
         return pipes.builtStylesProd()
+            .pipe(plugins.livereload());
+    });
+
+    // watch assets
+    watch(paths.assets, function() {
+        return pipes.processedAssets()
             .pipe(plugins.livereload());
     });
 
 });
 
 // default task builds for prod
-gulp.task('default', ['clean-build-app-prod']);
+gulp.task('build', ['clean-build-app-prod']);
