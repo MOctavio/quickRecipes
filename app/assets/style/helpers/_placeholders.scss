@@ -1,0 +1,50 @@
+%center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+%float-left { 
+	float: left; 
+}
+
+%float-right { 
+	float: right; 
+}
+
+%clear-fix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+%no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+%upper-case {
+	text-transform: uppercase;
+}
+
+%capitalize {
+	text-transform: capitalize;
+}
+
+%ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+%input-clear {
+    background: inherit;
+    border: none;
+    outline: none;
+    color: inherit;
+}

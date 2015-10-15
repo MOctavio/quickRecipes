@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html lang="en" ng-app="sandbox" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html lang="en" ng-app="sandbox" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html lang="en" ng-app="sandbox" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]> <html lang="en" ng-app="knowlEDGE" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" ng-app="knowlEDGE" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" ng-app="knowlEDGE" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="en" ng-app="sandbox">
-<!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible">
-        <title>Angular Sandbox</title>
-        <meta content="" name="description">
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-<!-- bower:css -->
-<!-- endinject -->
-<!-- inject:css -->
-<!-- endinject -->
-    </head>
-    <body ng-controller="AppController as app">
-        <!--[if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
-        <div ui-view></div>
-<!-- bower:js -->
-<!-- endinject -->
-<!-- inject:js -->
-<!-- endinject -->
-    </body>
+<html class="no-js" lang="en" ng-app="knowlEDGE" ng-strict-di > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>knowlEDGE</title>
+
+    <!-- bower:css -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body class="container-fluid" ng-controller="AppController as app">
+	<!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	<div ui-view></div>
+	<!-- bower:js -->
+	<!-- endinject -->
+	<!-- inject:js -->
+	<!-- endinject -->
+</body>
 </html>

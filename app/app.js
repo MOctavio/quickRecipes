@@ -1,19 +1,18 @@
-angular.module('sandbox', ['ui.router','ngAnimate','sandbox.controllers','sandbox.services','sandbox.directives'])
+angular.module('baseproject', ['ui.router', 'ngAnimate', 'baseproject.services', 'baseproject.controllers', 'baseproject.directives', 'baseproject.filters'])
 
-.config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 
-        $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: 'index.html'
-            });
+    $stateProvider
+	    .state('home', {
+	        url: '/',
+	        templateUrl: 'views/home/home.html'
+	    });
 
-    }
-]);
+}]);
 
-angular.module('sandbox.controllers', []);
-angular.module('sandbox.services', []);
-angular.module('sandbox.directives', []);
+angular.module('baseproject.services',[]);
+angular.module('baseproject.controllers',[]);
+angular.module('baseproject.directives',[]);
+angular.module('baseproject.filters',[]);
