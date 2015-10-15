@@ -10,13 +10,13 @@ var watch = require('gulp-watch');
 // == PATH STRINGS ========
 
 var paths = {
-    scripts: ['source/scripts/**/*.js', 'source/app.js'],
-    styles: ['./source/**/*.css', './source/**/*.scss'],
-    assets: ['./assets/**/*', './bower_components/font-awesome/fonts/'],
-    index: './source/index.html',
-    partials: ['source/**/*.html', '!source/index.html'],
+    scripts: ['app/scripts/**/*.js', 'app/app.js'],
+    styles: ['./app/**/*.css', './app/**/*.scss'],
+    assets: ['./app/assets/**/*', './bower_components/font-awesome/fonts/'],
+    index: './app/index.html',
+    partials: ['app/**/*.html', '!app/index.html'],
     bowerDir: './bower_components/',
-    directivesDir: './source/scripts/extensions/directives/',
+    directivesDir: './app/extensions/directives/',
     distDev: './dist',
     distProd: './dist',
     distScripts: './dist/scripts',
