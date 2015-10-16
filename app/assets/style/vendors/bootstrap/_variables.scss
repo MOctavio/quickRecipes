@@ -2,14 +2,14 @@
 // //
 // //## Gray and brand colors for use across Bootstrap.
 
-$gray-base: 				$gray-base-color;
-$gray-darker:            lighten($gray-base, 20%); // #222
-$gray-dark:              lighten($gray-base, 40%);   // #333
-$gray:                   lighten($gray-base, 60%); // #555
-$gray-light:             lighten($gray-base, 80%); // #777
-$gray-lighter:           lighten($gray-base, 100%); // #eee
-
-$brand-primary: 			darken($primary-color, 6.5%);
+// $gray-base: 				$gray-base-color;
+// $gray-darker:            lighten($gray-base, 20%); // #222
+// $gray-dark:              lighten($gray-base, 40%);   // #333
+// $gray:                   lighten($gray-base, 60%); // #555
+// $gray-light:             lighten($gray-base, 80%); // #777
+// $gray-lighter:           lighten($gray-base, 100%); // #eee
+//
+// $brand-primary: 			darken($primary-color, 6.5%);
 // $brand-success:         #5cb85c !default;
 // $brand-info:            #5bc0de !default;
 // $brand-warning:         #f0ad4e !default;
@@ -142,14 +142,14 @@ $brand-primary: 			darken($primary-color, 6.5%);
 // //## For each of Bootstrap's buttons, define text, background and border color.
 
 // $btn-font-weight:                normal !default;
-
-$btn-default-color:              $gray;
-$btn-default-bg:                 $base-color;
-$btn-default-border:             $gray;
-
-$btn-primary-color:              $gray;
-$btn-primary-bg:                 $darker-color;
-$btn-primary-border:             $gray;
+//
+// $btn-default-color:              $gray;
+// $btn-default-bg:                 $base-color;
+// $btn-default-border:             $gray;
+//
+// $btn-primary-color:              $gray;
+// $btn-primary-bg:                 $darker-color;
+// $btn-primary-border:             $gray;
 
 // $btn-success-color:              #fff !default;
 // $btn-success-bg:                 $brand-success !default;

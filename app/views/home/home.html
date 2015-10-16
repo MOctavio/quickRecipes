@@ -1,1 +1,16 @@
-Home Page
+<header class="home-page" ng-controller="HomeController as home">
+    <div class="container">
+        <div class="row">
+            <div class="vertical-center">
+                <div class="text-horizontal-center">
+                    <div class="brand-heading">
+                        knowl<em>EDGE</em> <i class="fa fa-chevron-right"></i>
+                    </div>
+                    <p class="intro-text">Collaborative sharing network.</p>
+                    <input type="text" ng-model="selected" uib-typeahead="document for document in documents | filter:$viewValue | limitTo:4" class="input-typeahead">
+                        <i class="fa fa-chevron-right fa-border button"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,3 +1,4 @@
 angular.module('knowlEDGE.controllers')
+    .controller('AppController', [function() {
 
-.controller('AppController', [ function() {} ]);
+    }]);
