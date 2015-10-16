@@ -1,4 +1,4 @@
-angular.module('baseproject', ['ui.router', 'ngAnimate', 'baseproject.services', 'baseproject.controllers', 'baseproject.directives', 'baseproject.filters'])
+angular.module('knowlEDGE', ['ui.router', 'ngAnimate', 'knowlEDGE.services', 'knowlEDGE.controllers', 'knowlEDGE.directives', 'knowlEDGE.filters'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -12,7 +12,7 @@ angular.module('baseproject', ['ui.router', 'ngAnimate', 'baseproject.services',
 
 }]);
 
-angular.module('baseproject.services',[]);
-angular.module('baseproject.controllers',[]);
-angular.module('baseproject.directives',[]);
-angular.module('baseproject.filters',[]);
+angular.module('knowlEDGE.services',[]);
+angular.module('knowlEDGE.controllers',[]);
+angular.module('knowlEDGE.directives',[]);
+angular.module('knowlEDGE.filters',[]);

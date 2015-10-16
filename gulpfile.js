@@ -10,7 +10,7 @@ var watch = require('gulp-watch');
 // == PATH STRINGS ========
 
 var paths = {
-    scripts: ['app/scripts/**/*.js', 'app/app.js'],
+    scripts: ['app/scripts/**/*.js','app/controllers/**/*.js','app/services/**/*.js','app/extensions/**/*.js','app/filters/**/*.js', 'app/app.js'],
     styles: ['./app/**/*.css', './app/**/*.scss'],
     assets: ['./app/assets/**/*', './bower_components/font-awesome/fonts/'],
     index: './app/index.html',
@@ -139,7 +139,7 @@ pipes.icons = function() {
 
 pipes.processedAssets = function() {
     return gulp.src(paths.assets)
-        .pipe(gulp.dest(paths.distDev + '/assets/'));
+        .pipe(gulp.dest(paths.distDev + '/assets'));
 };
 
 pipes.validatedIndex = function() {
