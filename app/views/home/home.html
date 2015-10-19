@@ -28,8 +28,8 @@
                         <i class="fa fa-chevron-right"></i>
                     </div>
                     <p class="intro-text">Collaborative sharing network.</p>
-                    <input class="input-typeahead" ng-model="selected" type="text" uib-typeahead="document for document in documents | filter:$viewValue | limitTo:4">
-                    <i class="fa fa-chevron-right fa-border button"></i>
+                    <input class="input-typeahead" ng-model="selected.id" type="text" uib-typeahead="document.label for document in documents | filter:{label:$viewValue} | limitTo:4" autocomplete="off">
+                    <i class="fa fa-chevron-right fa-border button" ng-click="home.goToSerachView()"></i>
                 </div>
             </div>
         </div>
