@@ -1,14 +1,35 @@
 <header class="home-page" ng-controller="HomeController as home">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <div class="shape"></div>
+                    <div class="title">Hewlette-Packard</div>
+                    Enterprise</div>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="./">Login
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <div class="container">
         <div class="row">
             <div class="vertical-center">
                 <div class="text-horizontal-center">
                     <div class="brand-heading">
-                        knowl<em>EDGE</em> <i class="fa fa-chevron-right"></i>
+                        knowl
+                        <em>EDGE</em>
+                        <i class="fa fa-chevron-right"></i>
                     </div>
                     <p class="intro-text">Collaborative sharing network.</p>
-                    <input type="text" ng-model="selected" uib-typeahead="document for document in documents | filter:$viewValue | limitTo:4" class="input-typeahead">
-                        <i class="fa fa-chevron-right fa-border button"></i>
+                    <input class="input-typeahead" ng-model="selected" type="text" uib-typeahead="document for document in documents | filter:$viewValue | limitTo:4">
+                    <i class="fa fa-chevron-right fa-border button"></i>
                 </div>
             </div>
         </div>
