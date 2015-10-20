@@ -3,8 +3,10 @@ angular.module('knowlEDGE.controllers')
         $scope.selected = undefined;
         $scope.documents = SearchService.getDocumentList();
 
-        this.goToSerachView = function () {
-            SearchService.setActiveSearchElement($scope.selected);
-            $location.url('/search');
+        $scope.onSelect = function ($item) {
+            SearchService.setActiveSearchElement($item);
+        };
+        this.redirectTo = function (url) {
+            if (url) $location.url(url);
         };
     }]);
