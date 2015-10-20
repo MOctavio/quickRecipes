@@ -28,8 +28,7 @@
                         <i class="fa fa-chevron-right"></i>
                     </div>
                     <p class="intro-text">Collaborative sharing network.</p>
-                    <input class="input-typeahead" ng-model="selected.id" type="text" uib-typeahead="document.label for document in documents | filter:{label:$viewValue} | limitTo:4" autocomplete="off" typeahead-on-select="home.onSelect($item)">
-                    <i class="fa fa-chevron-right fa-border button" ng-click="home.redirectTo('/search')"></i>
+                    <input-search class="text-horizontal-center" active-item="search.activeItem" items="search.items" options="search.options"></input-search>
                 </div>
             </div>
         </div>

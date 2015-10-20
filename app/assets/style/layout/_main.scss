@@ -19,8 +19,6 @@ $nav-height: 4vh;
 }
 .nav,
 .navbar-brand {
-
-    // padding-left: 5vw;
     line-height: $nav-height;
     height: $nav-height;
 }
@@ -68,19 +66,14 @@ ul {
         }
     }
 }
-i.fa.button {
-    cursor: pointer;
-    padding-left: 7px;
-    padding-right: 6px;
-    padding-bottom: 3px;
-}
 
 //Views
 .default-view {
     min-width: 100%;
     min-width: 100vw;
     min-height: 100%;
-    min-height: 100vh;
+    //TODO not working at 100%
+    min-height: 95vh;
     .vertical-center {
         min-height: 100%;
         min-height: 95vh;
@@ -95,6 +88,8 @@ i.fa.button {
     //Home
     .home-page {
         background-color: $primary-color;
+        //TODO not working at 100%
+        min-height: 95vh;
         & * {
             color: $primary-text-color;
             &:not(.fa) {
@@ -123,17 +118,8 @@ i.fa.button {
             margin-top: 2vh;
             font-size: 0.9em;
         }
-        input[type="text"] {
-            color: $gray-darker;
-            &.input-typeahead {
-                width: $input-typeahead-width;
-                margin-top: 5vh;
-                padding-top: 4px;
-            }
-        }
-
         ul.dropdown-menu {
-            > li a{
+            > li a {
                 color: $gray-darker;
                 strong {
                     color: inherit;
@@ -163,9 +149,6 @@ i.fa.button {
                 color: inherit;
             }
         }
-        i.fa.button {
-            cursor: pointer;
-        }
         .brand-heading {
             cursor: pointer;
             font-size: 1.5em;
@@ -179,35 +162,5 @@ i.fa.button {
                 font-style: italic;
             }
         }
-        .search {
-            .intro-text {
-                width: $input-typeahead-width;
-                font-size: 0.9em;
-                color: lighten($primary-color, 5%);
-
-                //TODO this is only for preview
-                cursor: pointer;
-            }
-            i {
-                color: $primary-color;
-                border-color: $primary-color;
-                padding-top: 5px;
-                padding-bottom: 4px;
-            }
-        }
-        input[type="text"] {
-            &.input-typeahead {
-                border-color: $primary-color;
-                border-style: double;
-                width: $input-typeahead-width;
-                margin-top: 2vh;
-                padding-top: 4px;
-            }
-        }
-
-        // ul.dropdown-menu {
-        //     max-width: $input-typeahead-width;
-        //     min-width: $input-typeahead-width;
-        // }
     }
 }

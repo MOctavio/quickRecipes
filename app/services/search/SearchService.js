@@ -1,6 +1,6 @@
 angular.module('knowlEDGE.services')
     .service('SearchService', [function() {
-        var activeSearchElement = {};
+        var activeSearchElement;
 
         this.setActiveSearchElement = function (document) {
             activeSearchElement = document;

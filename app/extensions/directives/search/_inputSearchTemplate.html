@@ -1,0 +1,6 @@
+<div class="input-search">
+    <div ng-if="options.advanceSearch" class="advance-search">Advance search</div>
+    <input autocomplete="off" class="input-typeahead" ng-model="activeItem" type="text" uib-typeahead="item.label for item in items | filter:{label:$viewValue} | limitTo:4" typeahead-on-select="inputSearch.onSelect($item)">
+    <i ng-if="options.chevron" class="fa fa-chevron-right fa-border button" ng-click="inputSearch.redirectTo('/search')"></i>
+    <div ng-if="!options.chevron" class="button"  ng-click="inputSearch.redirectTo('/search')">Search</div>
+</div>

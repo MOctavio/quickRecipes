@@ -1,0 +1,32 @@
+.input-search {
+    height: 15vh;
+    i.fa.button {
+        border-color: $primary-text-color;
+        cursor: pointer;
+        padding: 4px 6px 4px 7px;
+    }
+    .advance-search {
+        width: $input-typeahead-width;
+        font-size: 0.9em;
+        color: lighten($primary-color, 5%);
+
+        //TODO this is only for preview
+        cursor: pointer;
+    }
+    i {
+        color: $primary-color;
+        border-color: $primary-color;
+        padding-top: 5px;
+        padding-bottom: 4px;
+    }
+    input[type="text"] {
+        &.input-typeahead {
+            color: $gray-darker;
+            border-color: $primary-color;
+            border-style: double;
+            width: $input-typeahead-width;
+            margin-top: 2vh;
+            padding-top: 4px;
+        }
+    }
+}

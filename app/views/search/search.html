@@ -1,9 +1,9 @@
-<header class="search-page" ng-controller="SearchController as search">
+<header class="search-page" ng-controller="SearchController as searchCtrl">
     <div class="container-fluid">
         <nav class="navbar navbar-default">
             <div class="navbar-header">
                 <div class="navbar-brand">
-                    <div class="brand-heading" ng-click="search.redirectTo('./')">
+                    <div class="brand-heading" ng-click="searchCtrl.redirectTo('./')">
                         knowl<em>EDGE</em>
                         <i class="fa fa-chevron-right"></i>
                     </div>
@@ -39,11 +39,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="search">
-                <div class="intro-text">Advance search</div>
-                <input autocomplete="off" class="input-typeahead" ng-model="selected" type="text" uib-typeahead="document.label for document in documents | filter:{label:$viewValue} | limitTo:4" typeahead-on-select="home.onSelect($item)">
-                <i class="fa fa-chevron-right fa-border button" ng-click="search.goToSerachView()"></i>
-            </div>
+            <input-search active-item="search.activeItem" items="search.items" options="search.options"></input-search>
         </div>
     </div>
 </header>
