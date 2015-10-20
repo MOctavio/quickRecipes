@@ -124,6 +124,7 @@ i.fa.button {
             font-size: 0.9em;
         }
         input[type="text"] {
+            color: $gray-darker;
             &.input-typeahead {
                 width: $input-typeahead-width;
                 margin-top: 5vh;
@@ -131,10 +132,19 @@ i.fa.button {
             }
         }
 
-        // ul.dropdown-menu {
-        //     max-width: $input-typeahead-width;
-        //     min-width: $input-typeahead-width;
-        // }
+        ul.dropdown-menu {
+            > li a{
+                color: $gray-darker;
+                strong {
+                    color: inherit;
+                }
+            }
+            & > .active > a,
+            & > .active > a:hover,
+            & > .active > a:focus {
+                color: $primary-text-color;
+            }
+        }
     }
     .search-page {
         & * {
