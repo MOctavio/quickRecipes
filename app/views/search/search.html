@@ -3,7 +3,7 @@
         <nav class="navbar navbar-default">
             <div class="navbar-header">
                 <div class="navbar-brand">
-                    <div class="brand-heading" ng-click="redirectTo('./')">
+                    <div class="brand-heading" ng-click="search.redirectTo('./')">
                         knowl<em>EDGE</em>
                         <i class="fa fa-chevron-right"></i>
                     </div>
@@ -41,7 +41,7 @@
         <div class="row">
             <div class="search">
                 <div class="intro-text">Advance search</div>
-                <input autocomplete="off" class="input-typeahead" ng-model="selected.id" type="text" uib-typeahead="document.label for document in documents | filter:{label:$viewValue} | limitTo:4">
+                <input autocomplete="off" class="input-typeahead" ng-model="selected" type="text" uib-typeahead="document.label for document in documents | filter:{label:$viewValue} | limitTo:4" typeahead-on-select="home.onSelect($item)">
                 <i class="fa fa-chevron-right fa-border button" ng-click="search.goToSerachView()"></i>
             </div>
         </div>
