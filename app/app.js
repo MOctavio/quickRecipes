@@ -8,6 +8,10 @@ angular.module('knowlEDGE', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'knowlEDG
 	    .state('home', {
 	        url: '/',
 	        templateUrl: 'views/home/home.html'
+	    })
+        .state('search', {
+	        url: '/search',
+	        templateUrl: 'views/search/search.html'
 	    });
 
 }]);

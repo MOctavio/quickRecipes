@@ -13,15 +13,21 @@ $nav-height: 4vh;
 .navbar {
     min-height: $nav-height;
     margin-bottom: 0;
+    & a {
+        font-family: $font-family;
+    }
 }
 .nav,
 .navbar-brand {
+
+    // padding-left: 5vw;
     line-height: $nav-height;
     height: $nav-height;
 }
 .navbar-brand {
+    font-family: $font-family;
     cursor: default;
-    padding-left: 15px;
+    padding-left: 4vh;
     line-height: 16px;
     height: $nav-height;
     color: $primary-text-color;
@@ -40,9 +46,37 @@ $nav-height: 4vh;
     }
 }
 
+// Elements
+input[type="text"] {
+    &.input-typeahead {
+        font-family: $font-family;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+ul {
+    &.dropdown-menu {
+        max-width: $input-typeahead-width;
+        min-width: $input-typeahead-width;
+        font-family: $font-family;
+        & > .active > a,
+        & > .active > a:hover,
+        & > .active > a:focus {
+            font-family: $font-family;
+            background-color: $secondary-color;
+        }
+    }
+}
+i.fa.button {
+    cursor: pointer;
+    padding-left: 7px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+}
+
 //Views
-.home-page {
-    background-color: $primary-color;
+.default-view {
     min-width: 100%;
     min-width: 100vw;
     min-height: 100%;
@@ -57,50 +91,112 @@ $nav-height: 4vh;
         min-width: 100%;
         text-align: center;
     }
-    i.fa.button {
-        color: $primary-text-color;
-        cursor: pointer;
-    }
-    .brand-heading {
-        font-size: 3.5em;
-        font-family: $font-family;
-        color: $primary-text-color;
-        i {
+
+    //Home
+    .home-page {
+        background-color: $primary-color;
+        & * {
+            color: $primary-text-color;
+            &:not(.fa) {
+                font-family: $font-family;
+            }
+        }
+        .navbar-default * {
+            color: inherit;
+            & .navbar-nav > li > a:hover,
+            & .navbar-nav > li > a:focus {
+                color: inherit;
+            }
+        }
+        .brand-heading {
+            font-size: 3.5em;
+            i {
+                font-size: 0.9em;
+            }
+
+            // TODO: Bootstrap should be doing this
+            em {
+                font-style: italic;
+            }
+        }
+        .intro-text {
+            margin-top: 2vh;
             font-size: 0.9em;
         }
+        input[type="text"] {
+            &.input-typeahead {
+                width: $input-typeahead-width;
+                margin-top: 5vh;
+                padding-top: 4px;
+            }
+        }
 
-        // TODO: Bootstrap should be doing this
-        em {
-            font-style: italic;
-        }
+        // ul.dropdown-menu {
+        //     max-width: $input-typeahead-width;
+        //     min-width: $input-typeahead-width;
+        // }
     }
-    .intro-text {
-        margin-top: 2vh;
-        font-size: 0.9em;
-        font-family: $font-family;
-        color: $primary-text-color;
-    }
-    input[type="text"] {
-        &.input-typeahead {
-            width: $input-typeahead-width;
-            margin-top: 5vh;
-            font-family: $font-family;
+    .search-page {
+        & * {
+            color: $gray-dark;
+            &:not(.fa) {
+                font-family: $font-family;
+            }
         }
-        &:focus {
-            outline: none;
-            border: solid 1px lightness($secondary-color);
-            box-shadow: 0 0 5px 1px lightness($secondary-color);
+        .nav {
+            margin-bottom: 8vh;
         }
-    }
-    ul.dropdown-menu {
-        max-width: $input-typeahead-width;
-        min-width: $input-typeahead-width;
-        font-family: $font-family;
+        .navbar-default * {
+            color: inherit;
+            & .navbar-nav > li > a:hover,
+            & .navbar-nav > li > a:focus {
+                color: inherit;
+            }
+        }
+        i.fa.button {
+            cursor: pointer;
+        }
+        .brand-heading {
+            font-size: 1.5em;
+            i {
+                color: $primary-color;
+                font-size: 0.9em;
+            }
 
-        // background-color: transparent;
-        > .active > a {
-            font-family: $font-family;
-            background-color: $secondary-color;
+            // TODO: Bootstrap should be doing this
+            em {
+                font-style: italic;
+            }
         }
+        .search {
+            .intro-text {
+                width: $input-typeahead-width;
+                font-size: 0.9em;
+                color: lighten($primary-color, 5%);
+
+                //TODO this is only for preview
+                cursor: pointer;
+            }
+            i {
+                color: $primary-color;
+                border-color: $primary-color;
+                padding-top: 5px;
+                padding-bottom: 4px;
+            }
+        }
+        input[type="text"] {
+            &.input-typeahead {
+                border-color: $primary-color;
+                border-style: double;
+                width: $input-typeahead-width;
+                margin-top: 2vh;
+                padding-top: 4px;
+            }
+        }
+
+        // ul.dropdown-menu {
+        //     max-width: $input-typeahead-width;
+        //     min-width: $input-typeahead-width;
+        // }
     }
 }
