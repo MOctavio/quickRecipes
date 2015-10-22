@@ -10,7 +10,7 @@ angular.module('knowlEDGE.services')
             return activeSearchElement;
         };
 
-        this.getDocumentList = function() {
+        this.getItemsList = function() {
             return [{
                 id: 0,
                 label: 'Ice cream sandwich'

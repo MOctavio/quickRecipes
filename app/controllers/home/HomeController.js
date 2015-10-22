@@ -1,6 +1,6 @@
 angular.module('knowlEDGE.controllers')
     .controller('HomeController', ['$scope', '$location', 'SearchService', function($scope, $location, SearchService) {
-        var documents = SearchService.getDocumentList();
+        var documents = SearchService.getItemsList();
         $scope.selected = SearchService.getActiveSearchElement();
 
         this.redirectTo = function(url) {
