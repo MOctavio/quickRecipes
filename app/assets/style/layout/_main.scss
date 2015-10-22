@@ -96,6 +96,10 @@ ul {
                 font-family: $font-family;
             }
         }
+        i.fa.button {
+            color: $primary-text-color;
+            border-color: $primary-text-color;
+        }
         .navbar-default * {
             color: inherit;
             & .navbar-nav > li > a:hover,

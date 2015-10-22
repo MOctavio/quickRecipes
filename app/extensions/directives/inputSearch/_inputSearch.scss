@@ -1,7 +1,8 @@
 .input-search {
-    height: 15vh;
+    height: 5vh;
     i.fa.button {
-        border-color: $primary-text-color;
+        color: $primary-color;
+        border-color: $primary-color;
         cursor: pointer;
         padding: 4px 6px 4px 7px;
     }
@@ -12,12 +13,6 @@
 
         //TODO this is only for preview
         cursor: pointer;
-    }
-    i {
-        color: $primary-color;
-        border-color: $primary-color;
-        padding-top: 5px;
-        padding-bottom: 4px;
     }
     input[type="text"] {
         &.input-typeahead {
