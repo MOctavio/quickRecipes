@@ -48,9 +48,13 @@ angular.module('knowlEDGE.services')
         };
 
         this.getRelatedSearchItems = function(itemId) {
+            // TODO: Server side implementation.
             // When this get implemented the itemId should
             // be sent to the server and it should respond
-            // with an array of items matching related search values.
+            // with an array of items matching related search
+            // values.
+            // Including in the request a default limit of
+            // items could be good idea as well.
             return [{
                 id: 5,
                 label: 'Ice cream'
