@@ -1,0 +1,29 @@
+<section class="search-item">
+    <article ng-repeat="item in ::searchItems">
+        <header ng-click="">
+            {{item.title}}
+            <div>
+                <span>{{ item.timestamp | humanizeRelativeTime }}</span>
+                |
+                <ng-pluralize count="item.downloadCount" offset="1" when="{ '0': 'Available to download.', '1': '{{item.downloadCount}} download.', 'other': '{{item.downloadCount}} downloads.'}"></ng-pluralize>
+                <uib-rating max="options.max" ng-model="item.rate" on-hover="hoveringOver(value)" on-leave="overStar = null" readonly="options.isReadonly" state-off="options.stateOff" state-on="options.stateOn"></uib-rating>
+                |
+                <ng-pluralize count="item.rateCount" offset="1" when="{ '0': 'Rate now.', '1': '{{item.rateCount}} rate.', 'other': '{{item.rateCount}} ratings.'}"></ng-pluralize>
+                -
+                <ng-pluralize count="item.commentsCount" offset="1" when="{ '0': 'Comment now.', '1': '{{item.commentsCount}} comment.', 'other': '{{item.commentsCount}} comments.'}"></ng-pluralize>
+            </div>
+        </header>
+
+        <details>
+            <summary>{{item.description}}</summary>
+            <div>
+                <strong><ng-pluralize count="item.authorslist.length" offset="1" when="{ 'one': 'Author:', 'other': 'Authors:'}"></ng-pluralize></strong>
+                <span ng-repeat="author in ::item.authorslist">{{$first ? '' : $last ? ' and ' : ', '}}{{author.firstName}} {{author.lastName}}</span>
+            </div>
+            <div><strong>Recomended use:</strong>
+                {{item.recomendation}}</div>
+            <div><strong>Document ID:</strong>
+                {{item.documentId}}</div>
+        </details>
+    </article>
+</section>
