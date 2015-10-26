@@ -2,6 +2,10 @@
 $input-typeahead-width: 25vw;
 $nav-height: 4vh;
 
+strong {
+    font-weight: bold;
+}
+
 //Grid
 .container-fluid {
     min-width: 100vw;
@@ -72,6 +76,7 @@ ul {
     min-width: 100%;
     min-width: 100vw;
     min-height: 100%;
+
     //TODO not working at 100%
     min-height: 95vh;
     .vertical-center {
@@ -88,6 +93,7 @@ ul {
     //Home
     .home-page {
         background-color: $primary-color;
+
         //TODO not working at 100%
         min-height: 95vh;
         & * {
