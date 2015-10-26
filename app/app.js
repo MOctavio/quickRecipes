@@ -1,4 +1,4 @@
-angular.module('knowlEDGE', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'knowlEDGE.services', 'knowlEDGE.controllers', 'knowlEDGE.directives', 'knowlEDGE.filters'])
+angular.module('knowlEDGE', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'angular-humanize', 'knowlEDGE.services', 'knowlEDGE.controllers', 'knowlEDGE.directives', 'knowlEDGE.filters'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
