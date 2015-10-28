@@ -8,11 +8,10 @@
     }
     .advance-search {
         width: $input-typeahead-width;
-        font-size: 0.9em;
+        font-size: 0.8em;
         color: lighten($primary-color, 5%);
-
-        //TODO this is only for preview
         cursor: pointer;
+        position: absolute;
     }
     input[type="text"] {
         &.input-typeahead {
