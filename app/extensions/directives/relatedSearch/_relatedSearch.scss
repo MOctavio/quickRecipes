@@ -1,16 +1,18 @@
 $padding-bottom: 20px;
 .related-search {
-    width: $input-typeahead-width;
     margin-bottom: 2vh;
     padding-bottom: $padding-bottom;
     border-style: solid;
     border-bottom: 2px solid $primary-color;
+    section {
+        width: $input-typeahead-width*2;
+    }
     p {
         font-weight: bold;
         font-size: 1.1em;
     }
     div,
-    div:hover{
+    div:hover {
         color: $gray-darker;
         cursor: pointer;
     }
