@@ -11,7 +11,6 @@ angular.module('knowlEDGE.controllers')
             activeItem: $scope.selected
         };
         this.redirectTo = function(url) {
-            console.log(url);
             if (url) $location.url(url);
         };
     }]);
