@@ -19,6 +19,10 @@ angular.module('knowlEDGE.directives')
                 };
                 $scope.hoveringOver = function(value) {
                 };
+                $scope.favorite = function(item) {
+                    item.favorite = !item.favorite;
+                };
+
             }],
             controllerAs: 'searchItem',
             link: function($scope, element, attrs, controller) {}

@@ -2,6 +2,11 @@
     <article ng-repeat="item in ::searchItems">
         <header ng-click="">
             {{item.title}}
+            <span class="options">
+                <i class="fa fa-download"></i>
+                <i class="fa fa-envelope-o"></i>
+                <i class="fa fa-heart-o" ng-click="favorite(item)" ng-class="{'favorite': item.favorite}"></i>
+            </span>
             <div>
                 <span>{{ item.timestamp | humanizeRelativeTime }}</span>
                 |
@@ -17,12 +22,17 @@
         <details>
             <summary>{{item.description}}</summary>
             <div>
-                <strong><ng-pluralize count="item.authorslist.length" offset="1" when="{ 'one': 'Author:', 'other': 'Authors:'}"></ng-pluralize></strong>
-                <span ng-repeat="author in ::item.authorslist">{{$first ? '' : $last ? ' and ' : ', '}}{{author.firstName}} {{author.lastName}}</span>
+                <strong>
+                    <ng-pluralize count="item.authorslist.length" offset="1" when="{ 'one': 'Author:', 'other': 'Authors:'}"></ng-pluralize>
+                </strong>
+                <span ng-repeat="author in ::item.authorslist">{{$first ? '' : $last ? ' and ' : ', '}}{{author.firstName}}
+                    {{author.lastName}}</span>
             </div>
-            <div><strong>Recomended use:</strong>
+            <div>
+                <strong>Recomended use:</strong>
                 {{item.recomendation}}</div>
-            <div><strong>Document ID:</strong>
+            <div>
+                <strong>Document ID:</strong>
                 {{item.documentId}}</div>
         </details>
     </article>

@@ -1,10 +1,19 @@
-$default-padding: 10px;
 .search-item {
     padding-bottom: $default-padding;
     header {
         font-weight: bold;
         font-size: 1.1em;
         padding-bottom: $default-padding;
+        span.options{
+            padding-left: $default-padding*4;
+            i {
+                cursor: pointer;
+                &.favorite {
+                    font-weight: bolder;
+                    color: $secondary-color;
+                }
+            }
+        }
         div {
             font-weight: lighter;
             font-size: small;
@@ -13,6 +22,7 @@ $default-padding: 10px;
     }
     details {
         padding: $default-padding;
+        margin-bottom: $default-padding*2;
         overflow: hidden;
         background: $gray-lighter;
     }
@@ -22,6 +32,7 @@ $default-padding: 10px;
     }
     details > div {
         padding: $default-padding*2 0 0 $default-padding*2;
+        font-size: 0.9em;
     }
     details summary::-webkit-details-marker {
         color: $primary-color;
