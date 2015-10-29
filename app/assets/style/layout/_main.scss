@@ -144,13 +144,24 @@ ul {
             &:not(.fa) {
                 font-family: $font-family;
             }
+            search-sidebar {
+                float: left;
+                position: relative;
+                padding-right: $default-padding;
+            }
+            search-item {
+                float: left;
+                position: relative;
+                border-left: 2px solid $primary-color;
+                padding-left: $default-padding;
+            }
         }
         .nav {
             margin-bottom: 8vh;
         }
         .navbar-default * {
             color: inherit;
-            & .navbar-nav > li > a:hover,
+            & .navbar-nav > li > a:ver,
             & .navbar-nav > li > a:focus {
                 color: inherit;
             }
