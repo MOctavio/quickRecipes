@@ -1,11 +1,10 @@
 .search-item {
     padding-bottom: $default-padding;
-    width: $input-typeahead-width*2;
     header {
         font-weight: bold;
         font-size: 1.1em;
         padding-bottom: $default-padding;
-        span.options{
+        span.options {
             padding-left: $default-padding*4;
             i {
                 cursor: pointer;
