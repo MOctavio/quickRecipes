@@ -1,5 +1,6 @@
 .search-item {
     padding-bottom: $default-padding;
+    width: $input-typeahead-width*2;
     header {
         font-weight: bold;
         font-size: 1.1em;
