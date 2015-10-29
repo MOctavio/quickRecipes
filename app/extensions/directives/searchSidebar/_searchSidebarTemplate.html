@@ -1,0 +1,14 @@
+<section class="search-sidebar">
+    <header>
+        <ng-pluralize count="searchCount" offset="1" when="{ '0': '', '1': '{{searchCount}} Result found.', 'other': '{{searchCount}} Results found.'}"></ng-pluralize>
+    </header>
+    <article>
+        <div ng-repeat="filterType in searchFilters">
+            <p>{{filterType.label}}</p>
+            <div ng-repeat="filter in filterType.filters">
+                <input id="{{$id}}" ng-model="filter.active" type="checkbox">
+                <label for="{{$id}}">{{filter.label}}</label>
+            </div>
+        </div>
+    </article>
+</section>

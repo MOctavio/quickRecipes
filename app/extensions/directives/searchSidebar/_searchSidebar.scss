@@ -1,0 +1,15 @@
+.search-sidebar {
+    padding-bottom: $default-padding;
+    font-weight: lighter;
+    font-size: 0.9em;
+    header,
+    p {
+        padding-bottom: $default-padding;
+    }
+    p {
+        font-weight: bold;
+    }
+    article > div > div {
+        padding-bottom: $default-padding / 2;        
+    }
+}
