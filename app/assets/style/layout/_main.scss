@@ -2,7 +2,7 @@ strong {
     font-weight: bold;
 }
 em {
-    font-style: italic;
+    font-style: italic !important;
 }
 
 //Grid
@@ -16,9 +16,6 @@ em {
 .navbar {
     min-height: $nav-height;
     margin-bottom: 0;
-    & a {
-        font-family: $font-family;
-    }
 }
 .nav,
 .navbar-brand {
@@ -26,7 +23,6 @@ em {
     height: $nav-height;
 }
 .navbar-brand {
-    font-family: $font-family;
     cursor: default;
     padding-left: 4vh;
     line-height: 16px;
@@ -37,12 +33,12 @@ em {
         border-color: $primary-text-color;
         border-style: solid;
         width: 45px;
-        height: 18px;
-        border-width: 4px;
+        height: 16px;
+        border-width: 3px;
     }
     .title {
+        @extend %font-semi-bold;
         margin-top: 4px;
-        font-weight: bold;
         font-size: 18px;
     }
 }
@@ -55,7 +51,7 @@ nav > * {
 // Elements
 input[type="text"] {
     &.input-typeahead {
-        font-family: $font-family;
+        @extend %font-light;
     }
     &:focus {
         outline: none;
@@ -65,11 +61,11 @@ ul {
     &.dropdown-menu {
         max-width: $input-typeahead-width;
         min-width: $input-typeahead-width;
-        font-family: $font-family;
+        @extend %font-light;
         & > .active > a,
         & > .active > a:hover,
         & > .active > a:focus {
-            font-family: $font-family;
+            @extend %font-light;
             background-color: $secondary-color;
         }
     }
@@ -83,6 +79,12 @@ ul {
 
     //TODO not working at 100%
     min-height: 95vh;
+    & * {
+        color: $gray-dark;
+        &:not(.fa) {
+            @extend %font-light;
+        }
+    }
     .vertical-center {
         min-height: 100%;
         min-height: 95vh;
@@ -102,9 +104,6 @@ ul {
         min-height: 95vh;
         & * {
             color: $primary-text-color;
-            &:not(.fa) {
-                font-family: $font-family;
-            }
         }
         i.fa.button {
             color: $primary-text-color;
@@ -149,9 +148,6 @@ ul {
     .search-page {
         & * {
             color: $gray-dark;
-            &:not(.fa) {
-                font-family: $font-family;
-            }
             search-sidebar {
                 float: left;
                 position: relative;
