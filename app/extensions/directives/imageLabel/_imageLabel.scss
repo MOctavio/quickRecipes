@@ -1,0 +1,14 @@
+.image-label {
+    height: 25px ;
+    & > img {
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+    }
+    label {
+        vertical-align: super;
+        font-size: small;
+        color: $gray-light ;
+        cursor: pointer;
+    }
+}
