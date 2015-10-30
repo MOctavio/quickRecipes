@@ -282,9 +282,9 @@ $navbar-default-bg: transparent; //#f8f8f8 !default;
 $navbar-default-border: transparent; //darken($navbar-default-bg, 6.5%) !default;
 // // Navbar links
 $navbar-default-link-color: $navbar-default-color; //#777 !default;
-$navbar-default-link-hover-color: $navbar-default-color; //#333 !default;
+$navbar-default-link-hover-color: $primary-color; //#333 !default;
 // $navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color: $navbar-default-color; // #555 !default;
+$navbar-default-link-active-color: $primary-color; // #555 !default;
 $navbar-default-link-active-bg: $navbar-default-bg !default;
 
 // $navbar-default-link-disabled-color:       #ccc !default;
