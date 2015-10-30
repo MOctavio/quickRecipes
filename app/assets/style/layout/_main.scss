@@ -1,6 +1,9 @@
 strong {
     font-weight: bold;
 }
+em {
+    font-style: italic;
+}
 
 //Grid
 .container-fluid {
@@ -41,6 +44,11 @@ strong {
         margin-top: 4px;
         font-weight: bold;
         font-size: 18px;
+    }
+}
+nav > * {
+    section.image-label {
+        margin-top: -5px;
     }
 }
 
@@ -173,10 +181,8 @@ ul {
                 color: $primary-color;
                 font-size: 0.9em;
             }
-
-            // TODO: Bootstrap should be doing this
             em {
-                font-style: italic;
+                margin-left: -5px;
             }
         }
     }
