@@ -10,9 +10,13 @@ em {
     min-width: 100vw;
     padding: 0;
     margin: 0;
+    overflow: hidden;
+}
+.scroll-panel {
+    overflow-y: auto;
+    max-height: 60vh;
 }
 
-//Navigation
 .navbar {
     min-height: $nav-height;
     margin-bottom: 0;
@@ -76,7 +80,7 @@ ul {
     min-width: 100%;
     min-width: 100vw;
     min-height: 100%;
-
+    overflow: hidden;
     //TODO not working at 100%
     min-height: 95vh;
     & * {
@@ -112,7 +116,8 @@ ul {
         .navbar-default * {
             color: inherit;
             & .navbar-nav > li > a:hover,
-            & .navbar-nav > li > a:focus {
+            & .navbar-nav > li > a:focus,
+            & .navbar-nav > .active > a {
                 color: inherit;
             }
         }
@@ -126,6 +131,9 @@ ul {
             em {
                 font-style: italic;
             }
+        }        
+        .navbar-brand {
+            position: fixed;
         }
         .intro-text {
             margin-top: 2vh;
