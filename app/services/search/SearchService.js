@@ -60,7 +60,11 @@ angular.module('knowlEDGE.services')
                 lastName: "Azagoury",
                 picture: "assets/images/user-1.jpg",
                 email: "jessica.azagoury@hpe.com"
-            }]
+            }],
+            favorite: false,
+            category: "other",
+            documentType: "Word",
+            location: "EMEA"
         }, {
             title: "Ice cream sandwich recipes",
             description: "This document contains 10 ice cream sandwich recipes to do at home.",
@@ -87,10 +91,14 @@ angular.module('knowlEDGE.services')
                 lastName: "Vargas",
                 picture: "assets/images/user-2.jpg",
                 email: "bryan.vargas@hpe.com"
-            }]
+            }],
+            favorite: true,
+            category: "other",
+            documentType: "Excel",
+            location: "US"
         }, {
             title: "Ice cream sandwich",
-            description: "This document contains 10 ice cream sandwich recipes to do at home.",
+            description: "An ice cream sandwich is a frozen dessert consisting of ice cream between two wafers, cookies, or other similar biscuit.",
             recomendation: "Sharable with clients to know how to easily make ice cream sandwichs.",
             documentId: 27091980,
             timestamp: 1445589272,
@@ -114,7 +122,80 @@ angular.module('knowlEDGE.services')
                 lastName: "Vargas",
                 picture: "assets/images/user-2.jpg",
                 email: "bryan.vargas@hpe.com"
-            }]
+            }],
+            favorite: true,
+            category: "other",
+            documentType: "PDF",
+            location: "EMEA"
+        },{
+            title: "Cherry pie recipe",
+            description: "Bake an all-American Cherry Pie recipe from Food Network using fresh or frozen cherries and a buttery pie dough crust for a fruity summer dessert.",
+            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
+            documentId: 27091990,
+            timestamp: 1446472244,
+            downloadCount: 7,
+            rate: 3,
+            rateCount: 5,
+            commentsCount: 4,
+            authorslist: [{
+                id: 1,
+                username: "jazagoury",
+                enabled: true,
+                firstName: "Jessica",
+                lastName: "Azagoury",
+                picture: "assets/images/user-1.jpg",
+                email: "jessica.azagoury@hpe.com"
+            }],
+            favorite: false,
+            category: "R&D",
+            documentType: "PDF",
+            location: "EMEA"
+        },{
+            title: "Cherry pie crust ",
+            description: "It is our favorite! Prep time does not include the time it takes to pit the cherries or make the pie crust. ;) I use the Pie Crust recipe in the Fanny Farmer Baking Book.",
+            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
+            documentId: 27091990,
+            timestamp: 1445435440,
+            downloadCount: 14,
+            rate: 4,
+            rateCount: 13,
+            commentsCount: 4,
+            authorslist: [{
+                id: 1,
+                username: "jazagoury",
+                enabled: true,
+                firstName: "Jessica",
+                lastName: "Azagoury",
+                picture: "assets/images/user-1.jpg",
+                email: "jessica.azagoury@hpe.com"
+            }],
+            favorite: false,
+            category: "other",
+            documentType: "Web Page",
+            location: "EMEA"
+        },{
+            title: "Classic Sour Cherry Pie",
+            description: "You've never had a cherry pie this good—an incredible sour cherry filling, a light and flaky crust, and vanilla ice cream to top it all off. If you can't find sour cherries, use sweet cherries and a little extra lemon juice instead.",
+            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
+            documentId: 27091990,
+            timestamp: 1441366472,
+            downloadCount: 2,
+            rate: 2,
+            rateCount: 2,
+            commentsCount: 1,
+            authorslist: [{
+                id: 1,
+                username: "jazagoury",
+                enabled: true,
+                firstName: "Jessica",
+                lastName: "Azagoury",
+                picture: "assets/images/user-1.jpg",
+                email: "jessica.azagoury@hpe.com"
+            }],
+            favorite: false,
+            category: "other",
+            documentType: "PDF",
+            location: "EMEA"
         }];
 
         var itemsList = [{
@@ -198,7 +279,7 @@ angular.module('knowlEDGE.services')
                 id: 1,
                 active: false
             }, {
-                label: "Adobe PDF",
+                label: "PDF",
                 id: 2,
                 active: false
             }, {
