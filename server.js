@@ -2,7 +2,7 @@ var express        = require('express');
 var app            = express();
 
 var port = process.env.PORT || 8081; // set our port
-var staticdir = process.env.NODE_ENV === 'production' ? 'dist.prod' : 'dist'; // get static files dir
+var staticdir = process.env.NODE_ENV === 'production' ? 'dist' : 'temp'; // get static files dir
 
 app.use(express.static(__dirname + '/' + staticdir)); // set the static files location /public/img will be /img for users
 
