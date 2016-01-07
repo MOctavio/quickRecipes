@@ -6,7 +6,7 @@
         <div ng-repeat="filterType in searchFilters">
             <p>{{filterType.label}}</p>
             <div ng-repeat="filter in filterType.filters">
-                <input id="{{$id}}" ng-model="filter.active" type="checkbox">
+                <input id="{{$id}}" ng-model="filter.active" type="checkbox" ng-change="setFilters()">
                 <label for="{{$id}}">{{filter.label}}</label>
             </div>
         </div>

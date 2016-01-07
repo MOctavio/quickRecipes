@@ -1,4 +1,4 @@
-angular.module('knowlEDGE', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'angular-humanize', 'knowlEDGE.services', 'knowlEDGE.controllers', 'knowlEDGE.directives', 'knowlEDGE.filters'])
+angular.module('quickRecipes', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'angular-humanize', 'quickRecipes.services', 'quickRecipes.controllers', 'quickRecipes.directives', 'quickRecipes.filters'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -16,7 +16,7 @@ angular.module('knowlEDGE', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'angular-
 
 }]);
 
-angular.module('knowlEDGE.services',[]);
-angular.module('knowlEDGE.controllers',[]);
-angular.module('knowlEDGE.directives',[]);
-angular.module('knowlEDGE.filters',[]);
+angular.module('quickRecipes.services',[]);
+angular.module('quickRecipes.controllers',[]);
+angular.module('quickRecipes.directives',[]);
+angular.module('quickRecipes.filters',[]);

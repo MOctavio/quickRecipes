@@ -1,12 +1,23 @@
-angular.module('knowlEDGE.services')
+angular.module('quickRecipes.services')
     .service('SearchService', [function() {
         var activeSearchElement;
+        var observers = [];
+        var self = this;
 
-        this.setActiveSearchElement = function(document) {
-            activeSearchElement = document;
+        this.setActiveSearchElement = function(element) {
+            activeSearchElement = element;
+            self.notifyObservers();
         };
         this.getActiveSearchElement = function() {
             return activeSearchElement;
+        };
+        this.registerObserver = function(f) {
+            observers.push(f);
+        };
+        this.notifyObservers = function() {
+            observers.forEach(function(observer) {
+                observer(activeSearchElement);
+            });
         };
 
         // TODO: Server side implementation.
@@ -43,6 +54,7 @@ angular.module('knowlEDGE.services')
         // Hardcoded data
         /***********************************************************************/
         var searchResults = [{
+            id: 0,
             title: "Ice cream sandwich history",
             description: "This document is about ice cream sandwich history in San Jose, Costa Rica.",
             recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
@@ -62,10 +74,11 @@ angular.module('knowlEDGE.services')
                 email: "jessica.azagoury@hpe.com"
             }],
             favorite: false,
-            category: "other",
+            category: "Desserts",
             documentType: "Word",
             location: "EMEA"
         }, {
+            id: 1,
             title: "Ice cream sandwich recipes",
             description: "This document contains 10 ice cream sandwich recipes to do at home.",
             recomendation: "Sharable with clients to know how to easily make ice cream sandwichs.",
@@ -93,10 +106,11 @@ angular.module('knowlEDGE.services')
                 email: "bryan.vargas@hpe.com"
             }],
             favorite: true,
-            category: "other",
+            category: "Recipes",
             documentType: "Excel",
             location: "US"
         }, {
+            id: 2,
             title: "Ice cream sandwich",
             description: "An ice cream sandwich is a frozen dessert consisting of ice cream between two wafers, cookies, or other similar biscuit.",
             recomendation: "Sharable with clients to know how to easily make ice cream sandwichs.",
@@ -127,10 +141,11 @@ angular.module('knowlEDGE.services')
             category: "other",
             documentType: "PDF",
             location: "EMEA"
-        },{
+        }, {
+            id: 3,
             title: "Cherry pie recipe",
             description: "Bake an all-American Cherry Pie recipe from Food Network using fresh or frozen cherries and a buttery pie dough crust for a fruity summer dessert.",
-            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
+            recomendation: "Sharable with clients to know how to easily make cherry pie",
             documentId: 27091990,
             timestamp: 1446472244,
             downloadCount: 7,
@@ -147,13 +162,14 @@ angular.module('knowlEDGE.services')
                 email: "jessica.azagoury@hpe.com"
             }],
             favorite: false,
-            category: "R&D",
+            category: "Recipes",
             documentType: "PDF",
             location: "EMEA"
-        },{
+        }, {
+            id: 4,
             title: "Cherry pie crust ",
             description: "It is our favorite! Prep time does not include the time it takes to pit the cherries or make the pie crust. ;) I use the Pie Crust recipe in the Fanny Farmer Baking Book.",
-            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
+            recomendation: "Sharable with clients to know how to easily make cherry pie",
             documentId: 27091990,
             timestamp: 1445435440,
             downloadCount: 14,
@@ -170,13 +186,38 @@ angular.module('knowlEDGE.services')
                 email: "jessica.azagoury@hpe.com"
             }],
             favorite: false,
-            category: "other",
+            category: "Desserts",
             documentType: "Web Page",
             location: "EMEA"
-        },{
+        }, {
+            id: 5,
             title: "Classic Sour Cherry Pie",
             description: "You've never had a cherry pie this good—an incredible sour cherry filling, a light and flaky crust, and vanilla ice cream to top it all off. If you can't find sour cherries, use sweet cherries and a little extra lemon juice instead.",
-            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
+            recomendation: "Sharable with clients to know how to easily make cherry pie",
+            documentId: 27091990,
+            timestamp: 1441366472,
+            downloadCount: 2,
+            rate: 2,
+            rateCount: 2,
+            commentsCount: 1,
+            authorslist: [{
+                id: 1,
+                username: "jazagoury",
+                enabled: true,
+                firstName: "Jessica",
+                lastName: "Azagoury",
+                picture: "assets/images/user-1.jpg",
+                email: "jessica.azagoury@hpe.com"
+            }],
+            favorite: false,
+            category: "Recipes",
+            documentType: "PDF",
+            location: "EMEA"
+        }, {
+            id: 6,
+            title: "Chocolate cake",
+            description: "You've never had a chocolate cake this good.",
+            recomendation: "Sharable with clients to know how to easily make chocolate cake",
             documentId: 27091990,
             timestamp: 1441366472,
             downloadCount: 2,
@@ -200,81 +241,59 @@ angular.module('knowlEDGE.services')
 
         var itemsList = [{
             id: 0,
-            label: 'Ice cream sandwich'
+            label: "Ice cream sandwich history"
         }, {
             id: 1,
-            label: 'Ice cream recipes'
+            label: "Ice cream sandwich recipes"
         }, {
             id: 2,
-            label: 'Ice cream history'
+            label: "Ice cream sandwich"
         }, {
             id: 3,
-            label: 'Cherry pie recipe'
+            label: "Cherry pie recipe"
         }, {
             id: 4,
-            label: 'Cherry pie'
+            label: "Cherry pie crust "
         }, {
             id: 5,
-            label: 'Ice cream'
-        }, {
-            id: 6,
-            label: 'Ice cream desserts'
-        }, {
-            id: 7,
-            label: 'Ice cream cake'
-        }, {
-            id: 8,
-            label: 'Sandwich'
-        }, {
-            id: 9,
-            label: 'Desserts'
-        }, {
-            id: 10,
-            label: 'Sweet sandwich'
+            label: "Classic Sour Cherry Pie"
         }];
 
         var relatedSearchItems = [{
-            id: 5,
-            label: 'Ice cream'
+            label: "Pie"
         }, {
-            id: 6,
-            label: 'Ice cream desserts'
+            label: "Recipes"
         }, {
-            id: 7,
-            label: 'Ice cream cake'
+            label: "Ice cream"
         }, {
-            id: 8,
-            label: 'Sandwich'
+            label: "Ice sandwich"
         }, {
-            id: 9,
-            label: 'Desserts'
+            label: "Cherry pie"
         }, {
-            id: 10,
-            label: 'Sweet sandwich'
+            label: "Lemon pie"
+        }, {
+            label: "Ice cream cake"
+        }, {
+            label: "Desserts"
         }];
-
         var searchFilters = [{
             label: "Category",
             filters: [{
-                label: "All",
-                id: 0,
-                active: true
-            }, {
-                label: "Other",
+                label: "Recipes",
+                id: 2,
+                active: false
+            },{
+                label: "Desserts",
                 id: 1,
                 active: false
-            }, {
-                label: "R&D",
-                id: 2,
+            },{
+                label: "Other",
+                id: 1,
                 active: false
             }]
         }, {
             label: "Document Type",
             filters: [{
-                label: "All",
-                id: 0,
-                active: true
-            }, {
                 label: "Web Page",
                 id: 1,
                 active: false
@@ -294,10 +313,6 @@ angular.module('knowlEDGE.services')
         }, {
             label: "Location",
             filters: [{
-                label: "Worldwide",
-                id: 0,
-                active: true
-            }, {
                 label: "EUR",
                 id: 1,
                 active: false

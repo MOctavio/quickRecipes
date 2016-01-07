@@ -10,7 +10,7 @@
                 cursor: pointer;
                 &.favorite {
                     font-weight: bolder;
-                    color: $secondary-color;
+                    color: $base-color-2;
                 }
             }
         }
@@ -36,6 +36,6 @@
         font-size: 0.9em;
     }
     details summary::-webkit-details-marker {
-        color: $primary-color;
+        color: $base-color;
     }
 }

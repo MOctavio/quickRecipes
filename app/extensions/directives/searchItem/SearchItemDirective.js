@@ -1,4 +1,4 @@
-angular.module('knowlEDGE.directives')
+angular.module('quickRecipes.directives')
     .directive('searchItem', [function() {
         return {
             scope: {
@@ -7,6 +7,12 @@ angular.module('knowlEDGE.directives')
             restrict: 'E',
             templateUrl: 'extensions/directives/searchItem/_searchItemTemplate.html',
             controller: ['$scope', '$location', 'SearchService', function($scope, $location, SearchService) {
+
+                var update = function (searchItems){
+                    $scope.searchFilter = searchItems.label;
+                };
+                SearchService.registerObserver(update);
+
                 $scope.options = $scope.options || {
                     max: 5,
                     isReadonly: false,
@@ -17,12 +23,10 @@ angular.module('knowlEDGE.directives')
                 this.redirectTo = function(url) {
                     if (url) $location.url(url);
                 };
-                $scope.hoveringOver = function(value) {
-                };
+                $scope.hoveringOver = function(value) {};
                 $scope.favorite = function(item) {
                     item.favorite = !item.favorite;
                 };
-
             }],
             controllerAs: 'searchItem',
             link: function($scope, element, attrs, controller) {}

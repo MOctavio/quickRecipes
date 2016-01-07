@@ -1,5 +1,5 @@
 <section class="search-item">
-    <article ng-repeat="item in ::searchItems">
+    <article ng-repeat="item in searchItems | filter:searchFilter" ng-animate="'animate'">
         <header ng-click="">
             {{item.title}}
             <span class="options">
@@ -10,12 +10,12 @@
             <div>
                 <span>{{ item.timestamp | humanizeRelativeTime }}</span>
                 |
-                <ng-pluralize count="item.downloadCount" offset="1" when="{ '0': 'Available to download.', '1': '{{item.downloadCount}} download.', 'other': '{{item.downloadCount}} downloads.'}"></ng-pluralize>
+                <ng-pluralize count="item.downloadCount" offset="1" when="{ '0': 'Available to download', 'one': '1 download', 'other': '{{item.downloadCount}} downloads'}"></ng-pluralize>
                 <uib-rating max="options.max" ng-model="item.rate" on-hover="hoveringOver(value)" on-leave="overStar = null" readonly="options.isReadonly" state-off="options.stateOff" state-on="options.stateOn"></uib-rating>
                 |
-                <ng-pluralize count="item.rateCount" offset="1" when="{ '0': 'Rate now.', '1': '{{item.rateCount}} rate.', 'other': '{{item.rateCount}} ratings.'}"></ng-pluralize>
+                <ng-pluralize count="item.rateCount" offset="1" when="{ '0': 'Rate now', 'one': '1 rate', 'other': '{{item.rateCount}} ratings'}"></ng-pluralize>
                 -
-                <ng-pluralize count="item.commentsCount" offset="1" when="{ '0': 'Comment now.', '1': '{{item.commentsCount}} comment.', 'other': '{{item.commentsCount}} comments.'}"></ng-pluralize>
+                <ng-pluralize count="item.commentsCount" offset="1" when="{ '0': 'Comment now', 'one': '1 comment', 'other': '{{item.commentsCount}} comments'}"></ng-pluralize>
             </div>
         </header>
 

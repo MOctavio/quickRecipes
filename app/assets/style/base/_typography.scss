@@ -10,27 +10,3 @@ $font-weight-regular: 400;//Same as Normal
 $font-weight-semi-bold: 500;
 $font-weight-bold: 700;//Same as Bold
 $font-weight-extra-bold: 900;
-
-$font-list: (ultra-light, "HPSimplified_Lt", normal, $font-weight-light),
-			(ultra-light-italic, "HPSimplified_LtIt", italic, $font-weight-light),
-			(light, "HPSimplified_Lt", normal, $font-weight-regular),
-			(light-italic, "HPSimplified_LtIt", italic, $font-weight-regular),
-			(regular, "HPSimplified", normal, $font-weight-regular),
-			(regular-italic, "HPSimplified", italic, $font-weight-regular),
-			(semi-bold, "HPSimplified", normal, $font-weight-semi-bold),
-			(semi-bold-italic, "HPSimplified", italic, $font-weight-semi-bold),
-			(bold, "HPSimplified_Bd", normal, $font-weight-bold),
-			(bold-italic, "HPSimplified_BdIt", italic, $font-weight-bold),
-			(extra-bold, "HPSimplified_Bd", normal, $font-weight-extra-bold),
-			(extra-bold-italic, "HPSimplified_BdIt", italic, $font-weight-extra-bold);
-
-@each $rule, $name, $style, $weight in $font-list {
-
-	@include font-face(quote($name), "../fonts/HPSimplified/#{$name}", $file-formats: ttf);
-
-	%font-#{$rule} {
-		font-family: quote($name), "Arial", Sans-Serif;
-		font-style: $style;
-		// font-weight: $weight;
-  	}
-}

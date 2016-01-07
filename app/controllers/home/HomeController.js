@@ -1,4 +1,4 @@
-angular.module('knowlEDGE.controllers')
+angular.module('quickRecipes.controllers')
     .controller('HomeController', ['$scope', '$location', 'SearchService', function($scope, $location, SearchService) {
         var documents = SearchService.getItemsList();
         $scope.selected = SearchService.getActiveSearchElement();

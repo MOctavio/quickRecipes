@@ -1,4 +1,4 @@
-angular.module('knowlEDGE.directives')
+angular.module('quickRecipes.directives')
     .directive('searchSidebar', [function() {
         return {
             scope: {

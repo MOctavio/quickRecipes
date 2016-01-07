@@ -1,4 +1,4 @@
-angular.module('knowlEDGE.controllers')
+angular.module('quickRecipes.controllers')
     .controller('AppController', [function() {
 
     }]);

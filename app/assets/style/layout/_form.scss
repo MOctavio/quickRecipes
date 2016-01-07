@@ -29,13 +29,13 @@
             left: 6px;
             top: 4px;
             font-size: 14px;
-            color: $primary-color;
+            color: $base-color;
             transition: all 0.2s;
         }
 
         // hover style just for information
         &:hover:before {
-            border: 1px solid $primary-color;
+            border: 1px solid $base-color;
         }
     }
 
@@ -66,6 +66,6 @@
 
     // accessibility
     &:focus + label:before {
-        border: 1px dotted $primary-color;
+        border: 1px dotted $base-color;
     }
 }
