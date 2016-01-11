@@ -1,12 +1,47 @@
 $font-xs: 8px;
-$font-s: 10px;
-$font-m: 13px;
-$font-l: 17px;
-$font-xl: 24px;
-$font-xxl: 34px;
+$font-s: 13px;
+$font-m: 16px;
+$font-l: 21px;
+$font-xl: 34px;
+$font-xxl: 55px;
 
 $font-weight-light: 200;
-$font-weight-regular: 400;//Same as Normal
+$font-weight-regular: 400; //Same as Normal
 $font-weight-semi-bold: 500;
-$font-weight-bold: 700;//Same as Bold
+$font-weight-bold: 700; //Same as Bold
 $font-weight-extra-bold: 900;
+
+$font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+$font-family-light: 'Gill Sans Light', 'Gill Sans MT', Calibri, sans-serif;
+
+@font-face {
+    font-family: "quickRecipes";
+    src: url("/assets/fonts/quickRecipes/quickRecipes.eot?qzzkz");
+    src: url("/assets/fonts/quickRecipes/quickRecipes.eot?qzzkz#iefix") format('embedded-opentype'),
+            url("/assets/fonts/quickRecipes/quickRecipes.ttf?qzzkz") format('truetype'),
+            url("/assets/fonts/quickRecipes/quickRecipes.woff?qzzkz") format('woff'),
+            url("/assets/fonts/quickRecipes/quickRecipes.svg?qzzkz#quickRecipes") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="qr-"],
+[class*=" qr-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "quickRecipes" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.qr-logo:before {
+    content: "\e900";
+}
+.qr-logo-circle:before {
+    content: "\e901";
+}

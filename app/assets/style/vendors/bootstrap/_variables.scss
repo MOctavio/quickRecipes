@@ -274,15 +274,18 @@ $grid-gutter-width: 15px !default;
 // $navbar-height:                    50px !default;
 // $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius: 0 px; //$border-radius-base !default;
+
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 // $navbar-collapse-max-height:       340px !default;
 $navbar-default-color: beige; //#777 !default;
-$navbar-default-bg: transparent; //#f8f8f8 !default;
-$navbar-default-border: transparent; //darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-bg: #f8f8f8 !default;
+$navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
+
 // // Navbar links
-$navbar-default-link-color: $navbar-default-color; //#777 !default;
+$navbar-default-link-color: $base-color; //#777 !default;
 $navbar-default-link-hover-color: $base-color; //#333 !default;
+
 // $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color: $base-color; // #555 !default;
 $navbar-default-link-active-bg: $navbar-default-bg !default;
@@ -368,9 +371,10 @@ $navbar-default-brand-hover-color: $navbar-default-brand-color;
 // //
 // //##
 // $jumbotron-padding:              30px !default;
-// $jumbotron-color:                inherit !default;
-// $jumbotron-bg:                   $gray-lighter !default;
-// $jumbotron-heading-color:        inherit !default;
+$jumbotron-color: $primary-text-color; //inherit !default;
+$jumbotron-bg: $base-color; //$gray-lighter !default;
+$jumbotron-heading-color: $primary-text-color; //inherit !default;
+
 // $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 // //== Form states and alerts
 // //

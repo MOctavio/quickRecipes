@@ -1,34 +1,14 @@
 <header class="home-page" ng-controller="HomeController as home">
-    <div class="container-fluid">
-        <nav class="navbar navbar-default">
-            <div class="navbar-header">
-                <div class="navbar-brand">
-                    UpperText
-                </div>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="./">Login
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <div class="jumbotron">
+        <div class="text-horizontal-center">
+            <h1>
+                <i class="qr-logo"></i>
+                <em>quick</em>Recipes</h1>
+            <p class="intro-text">Eat, drink and be merry!</p>
+            <input-search active-item="search.activeItem" class="text-horizontal-center" items="search.items" options="search.options"></input-search>
+        </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="vertical-center">
-                <div class="text-horizontal-center">
-                    <div class="brand-heading">
-                        <em>quick</em>Recipes
-                        <i class="fa fa-chevron-right"></i>
-                    </div>
-                    <p class="intro-text">Collaborative sharing network.</p>
-                    <input-search class="text-horizontal-center" active-item="search.activeItem" items="search.items" options="search.options"></input-search>
-                </div>
-            </div>
-        </div>
+        <div class="row"></div>
     </div>
 </header>

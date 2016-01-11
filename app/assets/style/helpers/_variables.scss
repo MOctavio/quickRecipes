@@ -1,13 +1,17 @@
 $base-color: rgb(150, 0, 24); // carmine-red
-$base-color-2: rgb(3, 128, 158);
+$base-color-2: rgb(255, 160, 122);
 $base-color-3: rgb(238, 173, 1);
 $base-color-4: rgb(41, 4, 11);
-
-$primary-text-color: beige;
-
-$font-family: sans-serif;
+$primary-text-color: rgb(245, 245, 235);
 
 $input-typeahead-width: 30vw;
-$nav-height: 4vh;
-
+$nav-height: 5vh;
 $default-padding: 10px;
+
+$gray-base-color: #000;
+$gray-base: 				$gray-base-color;
+$gray-darker:            lighten($gray-base, 20%); // #222
+$gray-dark:              lighten($gray-base, 40%);   // #333
+$gray:                   lighten($gray-base, 60%); // #555
+$gray-light:             lighten($gray-base, 80%); // #777
+$gray-lighter:           lighten($gray-base, 100%); // #eee

@@ -43,6 +43,7 @@ em {
 
 // Navigation
 .navbar {
+    font-family: $font-family;
     min-height: $nav-height;
     margin-bottom: 0;
 }
@@ -52,12 +53,20 @@ em {
     height: $nav-height;
 }
 .navbar-brand {
-    cursor: default;
+    cursor: pointer;
+    font-size: 1em;
     padding-left: 4vh;
+    padding-right: 4vh;
     line-height: 16px;
     height: $nav-height;
-    color: $primary-text-color;
-    font-size: 16px;
+    i {
+        color: $base-color;
+        font-size: 0.9em;
+        padding-right: 5px;
+    }
+    em {
+        margin-left: -5px;
+    }
     .shape {
         border-color: $primary-text-color;
         border-style: solid;
@@ -71,9 +80,23 @@ em {
         font-size: 18px;
     }
 }
-nav > * {
-    section.image-label {
-        margin-top: -5px;
+.navbar-default {
+    em {
+        color: $base-color;
+    }
+}
+.navbar-right {
+    padding-right: 2vh;
+}
+
+// Jumbotron
+.container-fluid .jumbotron {
+    border-radius: 0;
+}
+.jumbotron {
+    font-family: $font-family;
+    h1 {
+        font-size: 55px;
     }
 }
 
@@ -90,6 +113,8 @@ ul {
     &.dropdown-menu {
         max-width: $input-typeahead-width;
         min-width: $input-typeahead-width;
+        font-family: $font-family;
+        font-size: $font-m;
         @extend %font-light;
         & > .active > a,
         & > .active > a:hover,
@@ -109,18 +134,6 @@ ul {
 
     //TODO not working at 100%
     min-height: 95vh;
-    & * {
-        color: $gray-dark;
-        &:not(.fa) {
-            @extend %font-light;
-        }
-    }
-    .vertical-center {
-        min-height: 100%;
-        min-height: 95vh;
-        display: flex;
-        align-items: center;
-    }
     .text-horizontal-center {
         min-width: 100%;
         text-align: center;
@@ -128,42 +141,13 @@ ul {
 
     //Home
     .home-page {
-        background-color: $base-color;
 
         //TODO not working at 100%
         min-height: 95vh;
-        & * {
-            color: $primary-text-color;
-        }
-        i.fa.button {
-            color: $primary-text-color;
-            border-color: $primary-text-color;
-        }
-        .navbar-default * {
-            color: inherit;
-            & .navbar-nav > li > a:hover,
-            & .navbar-nav > li > a:focus,
-            & .navbar-nav > .active > a {
-                color: inherit;
-            }
-        }
-        .brand-heading {
-            font-size: 3.5em;
-            i {
-                font-size: 0.9em;
-            }
-
-            // TODO: Bootstrap should be doing this
-            em {
-                font-style: italic;
-            }
-        }
-        .navbar-brand {
-            position: fixed;
-        }
         .intro-text {
             margin-top: 2vh;
-            font-size: 0.9em;
+            font-style: italic;
+            font-weight: lighter;
         }
         ul.dropdown-menu {
             > li a {
@@ -176,43 +160,6 @@ ul {
             & > .active > a:hover,
             & > .active > a:focus {
                 color: $primary-text-color;
-            }
-        }
-    }
-    .search-page {
-        & * {
-            color: $gray-dark;
-            search-sidebar {
-                float: left;
-                position: relative;
-                padding-right: $default-padding;
-            }
-            search-item {
-                float: left;
-                position: relative;
-                border-left: 2px solid $base-color;
-                padding-left: $default-padding;
-            }
-        }
-        .nav {
-            margin-bottom: 8vh;
-        }
-        .navbar-default * {
-            color: inherit;
-            & .navbar-nav > li > a:ver,
-            & .navbar-nav > li > a:focus {
-                color: inherit;
-            }
-        }
-        .brand-heading {
-            cursor: pointer;
-            font-size: 1.5em;
-            i {
-                color: $base-color;
-                font-size: 0.9em;
-            }
-            em {
-                margin-left: -5px;
             }
         }
     }
