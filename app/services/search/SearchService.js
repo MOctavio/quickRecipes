@@ -28,6 +28,11 @@ angular.module('quickRecipes.services')
             return searchResults;
         };
 
+        this.getTopResults = function(limit) {
+            limit = limit || 3;
+            return searchResults.splice(0,limit);
+        };
+
         this.getResultsCount = function() {
             return searchResults.length;
         };
@@ -55,63 +60,9 @@ angular.module('quickRecipes.services')
         /***********************************************************************/
         var searchResults = [{
             id: 0,
-            title: "Fresh fruit skewers",
-            description: "I was looking for a different way to serve fruit, and it just popped into my head! Why not use fruit skewers?",
-            timestamp: 1441366472,
-            views: 30,
-            rate: 3,
-            rateCount: 5,
-            commentsCount: 4,
-            author: {
-                id: 1,
-                username: "bflay",
-                firstName: "Bobby",
-                lastName: "Flay",
-                picture: "assets/images/user-1.jpg",
-                email: "bobby.flay@sample.com"
-            },
-            favorite: false,
-            category: ["Desserts", "Healthy"]
-        }, {
-            id: 1,
-            title: "Gourmet dessert",
-            description: "This is a festive, crunchy, and fruity dessert with sweet oranges and strawberries",
-            timestamp: 1445589272,
-            views: 15,
-            rate: 5,
-            rateCount: 25,
-            commentsCount: 10,
-            author: {
-                id: 2,
-                firstName: "Julia",
-                lastName: "Child",
-                picture: "assets/images/user-2.jpg",
-                email: "julia.child@sample.com"
-            },
-            favorite: true,
-            category: ["Desserts"]
-        }, {
-            id: 2,
-            title: "Lemonade gelatin",
-            description: "Lemon gelatin, lemonade concentrate, and lemon zest lend the flavor to this molded dessert.",
-            timestamp: 1445589272,
-            views: 14,
-            rate: 5,
-            rateCount: 7,
-            commentsCount: 3,
-            author: {
-                id: 2,
-                firstName: "Julia",
-                lastName: "Child",
-                picture: "assets/images/user-2.jpg",
-                email: "julia.child@sample.com"
-            },
-            favorite: true,
-            category: ["Desserts"]
-        }, {
-            id: 3,
             title: "Royal dessert",
             description: "A yummy dessert made with lemonadeand frozen whipped topping. Freezes well, too.",
+            picture: "assets/images/_quickRecipes-04.png",
             timestamp: 1446472244,
             views: 15,
             rate: 3,
@@ -128,9 +79,68 @@ angular.module('quickRecipes.services')
             favorite: false,
             category: ["Desserts"]
         }, {
+            id: 1,
+            title: "Gourmet dessert",
+            description: "This is a festive, crunchy, and fruity dessert with sweet oranges and strawberries",
+            picture: "assets/images/_quickRecipes-02.png",
+            timestamp: 1445589272,
+            views: 15,
+            rate: 5,
+            rateCount: 25,
+            commentsCount: 10,
+            author: {
+                id: 2,
+                firstName: "Julia",
+                lastName: "Child",
+                picture: "assets/images/user-2.jpg",
+                email: "julia.child@sample.com"
+            },
+            favorite: true,
+            category: ["Desserts"]
+        }, {
+            id: 2,
+            title: "Fresh fruit skewers",
+            description: "I was looking for a different way to serve fruit, and it just popped into my head! Why not use fruit skewers?",
+            picture: "assets/images/_quickRecipes-05.png",
+            timestamp: 1441366472,
+            views: 30,
+            rate: 3,
+            rateCount: 5,
+            commentsCount: 4,
+            author: {
+                id: 1,
+                username: "bflay",
+                firstName: "Bobby",
+                lastName: "Flay",
+                picture: "assets/images/user-1.jpg",
+                email: "bobby.flay@sample.com"
+            },
+            favorite: false,
+            category: ["Desserts", "Healthy"]
+        }, {
+            id: 3,
+            title: "Lemonade gelatin",
+            description: "Lemon gelatin, lemonade concentrate, and lemon zest lend the flavor to this molded dessert.",
+            picture: "assets/images/_quickRecipes-03.png",
+            timestamp: 1445589272,
+            views: 14,
+            rate: 5,
+            rateCount: 7,
+            commentsCount: 3,
+            author: {
+                id: 2,
+                firstName: "Julia",
+                lastName: "Child",
+                picture: "assets/images/user-2.jpg",
+                email: "julia.child@sample.com"
+            },
+            favorite: true,
+            category: ["Desserts"]
+        }, {
             id: 4,
             title: "Cherry pie crust ",
             description: "It is our favorite! Prep time does not include the time it takes to pit the cherries or make the pie crust.",
+            picture: "assets/images/_quickRecipes-01.png",
             timestamp: 1445435440,
             views: 17,
             rate: 4,
@@ -150,6 +160,7 @@ angular.module('quickRecipes.services')
             id: 5,
             title: "Sour cherry pie",
             description: "You've never had a cherry pie this good—an incredible sour cherry filling, a light and flaky crust, and vanilla ice cream to top it all off.",
+            picture: "assets/images/_quickRecipes-06.png",
             timestamp: 1441366472,
             views: 28,
             rate: 2,
@@ -169,6 +180,7 @@ angular.module('quickRecipes.services')
             id: 6,
             title: "Chocolate cake",
             description: "Chocolate cake, chocolate frosting, but with what a difference. Peanut butter is the magic ingredient.  It is spread between the cake and the frosting.",
+            picture: "assets/images/_quickRecipes-07.png",
             timestamp: 1441366472,
             views: 24,
             rate: 2,
