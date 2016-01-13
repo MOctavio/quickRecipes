@@ -60,19 +60,12 @@ em {
     line-height: 16px;
     height: $nav-height;
     i {
-        color: $base-color;
+        color: $gray-darker;
         font-size: 0.9em;
         padding-right: 5px;
     }
     em {
         margin-left: -5px;
-    }
-    .shape {
-        border-color: $primary-text-color;
-        border-style: solid;
-        width: 45px;
-        height: 16px;
-        border-width: 3px;
     }
     .title {
         @extend %font-semi-bold;
@@ -82,7 +75,7 @@ em {
 }
 .navbar-default {
     em {
-        color: $base-color;
+        color: $gray-dark;
     }
 }
 .navbar-right {

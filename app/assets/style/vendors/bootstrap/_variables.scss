@@ -283,11 +283,11 @@ $navbar-default-bg: #f8f8f8 !default;
 $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
 // // Navbar links
-$navbar-default-link-color: $base-color; //#777 !default;
-$navbar-default-link-hover-color: $base-color; //#333 !default;
+$navbar-default-link-color: $gray-dark; //#777 !default;
+$navbar-default-link-hover-color: $gray-dark; //#333 !default;
 
 // $navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color: $base-color; // #555 !default;
+$navbar-default-link-active-color: $gray-dark; // #555 !default;
 $navbar-default-link-active-bg: $navbar-default-bg !default;
 
 // $navbar-default-link-disabled-color:       #ccc !default;
@@ -371,9 +371,9 @@ $navbar-default-brand-hover-color: $navbar-default-brand-color;
 // //
 // //##
 // $jumbotron-padding:              30px !default;
-$jumbotron-color: $primary-text-color; //inherit !default;
+$jumbotron-color: $gray-lighter; //inherit !default;
 $jumbotron-bg: $base-color; //$gray-lighter !default;
-$jumbotron-heading-color: $primary-text-color; //inherit !default;
+$jumbotron-heading-color: $gray-lighter; //inherit !default;
 
 // $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 // //== Form states and alerts
