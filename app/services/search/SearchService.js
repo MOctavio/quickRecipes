@@ -55,274 +55,187 @@ angular.module('quickRecipes.services')
         /***********************************************************************/
         var searchResults = [{
             id: 0,
-            title: "Ice cream sandwich history",
-            description: "This document is about ice cream sandwich history in San Jose, Costa Rica.",
-            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs",
-            documentId: 27091990,
+            title: "Fresh fruit skewers",
+            description: "I was looking for a different way to serve fruit, and it just popped into my head! Why not use fruit skewers?",
             timestamp: 1441366472,
-            downloadCount: 30,
+            views: 30,
             rate: 3,
             rateCount: 5,
             commentsCount: 4,
-            authorslist: [{
+            author: {
                 id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
+                username: "bflay",
+                firstName: "Bobby",
+                lastName: "Flay",
                 picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }],
+                email: "bobby.flay@sample.com"
+            },
             favorite: false,
-            category: "Desserts",
-            documentType: "Word",
-            location: "EMEA"
+            category: ["Desserts", "Healthy"]
         }, {
             id: 1,
-            title: "Ice cream sandwich recipes",
-            description: "This document contains 10 ice cream sandwich recipes to do at home.",
-            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs.",
-            documentId: 27091980,
+            title: "Gourmet dessert",
+            description: "This is a festive, crunchy, and fruity dessert with sweet oranges and strawberries",
             timestamp: 1445589272,
-            downloadCount: 55,
+            views: 15,
             rate: 5,
             rateCount: 25,
             commentsCount: 10,
-            authorslist: [{
-                id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
-                picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }, {
+            author: {
                 id: 2,
-                username: "bvargas",
-                enabled: true,
-                firstName: "Bryan",
-                lastName: "Vargas",
+                firstName: "Julia",
+                lastName: "Child",
                 picture: "assets/images/user-2.jpg",
-                email: "bryan.vargas@hpe.com"
-            }],
+                email: "julia.child@sample.com"
+            },
             favorite: true,
-            category: "Recipes",
-            documentType: "Excel",
-            location: "US"
+            category: ["Desserts"]
         }, {
             id: 2,
-            title: "Ice cream sandwich",
-            description: "An ice cream sandwich is a frozen dessert consisting of ice cream between two wafers, cookies, or other similar biscuit.",
-            recomendation: "Sharable with clients to know how to easily make ice cream sandwichs.",
-            documentId: 27091980,
+            title: "Lemonade gelatin",
+            description: "Lemon gelatin, lemonade concentrate, and lemon zest lend the flavor to this molded dessert.",
             timestamp: 1445589272,
-            downloadCount: 0,
+            views: 14,
             rate: 5,
             rateCount: 7,
             commentsCount: 3,
-            authorslist: [{
-                id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
-                picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }, {
+            author: {
                 id: 2,
-                username: "bvargas",
-                enabled: true,
-                firstName: "Bryan",
-                lastName: "Vargas",
+                firstName: "Julia",
+                lastName: "Child",
                 picture: "assets/images/user-2.jpg",
-                email: "bryan.vargas@hpe.com"
-            }],
+                email: "julia.child@sample.com"
+            },
             favorite: true,
-            category: "other",
-            documentType: "PDF",
-            location: "EMEA"
+            category: ["Desserts"]
         }, {
             id: 3,
-            title: "Cherry pie recipe",
-            description: "Bake an all-American Cherry Pie recipe from Food Network using fresh or frozen cherries and a buttery pie dough crust for a fruity summer dessert.",
-            recomendation: "Sharable with clients to know how to easily make cherry pie",
-            documentId: 27091990,
+            title: "Royal dessert",
+            description: "A yummy dessert made with lemonadeand frozen whipped topping. Freezes well, too.",
             timestamp: 1446472244,
-            downloadCount: 7,
+            views: 15,
             rate: 3,
             rateCount: 5,
             commentsCount: 4,
-            authorslist: [{
+            author: {
                 id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
+                username: "bflay",
+                firstName: "Bobby",
+                lastName: "Flay",
                 picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }],
+                email: "bobby.flay@sample"
+            },
             favorite: false,
-            category: "Recipes",
-            documentType: "PDF",
-            location: "EMEA"
+            category: ["Desserts"]
         }, {
             id: 4,
             title: "Cherry pie crust ",
-            description: "It is our favorite! Prep time does not include the time it takes to pit the cherries or make the pie crust. ;) I use the Pie Crust recipe in the Fanny Farmer Baking Book.",
-            recomendation: "Sharable with clients to know how to easily make cherry pie",
-            documentId: 27091990,
+            description: "It is our favorite! Prep time does not include the time it takes to pit the cherries or make the pie crust.",
             timestamp: 1445435440,
-            downloadCount: 14,
+            views: 17,
             rate: 4,
             rateCount: 13,
             commentsCount: 4,
-            authorslist: [{
+            author: {
                 id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
+                username: "bflay",
+                firstName: "Bobby",
+                lastName: "Flay",
                 picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }],
+                email: "bobby.flay@sample"
+            },
             favorite: false,
-            category: "Desserts",
-            documentType: "Web Page",
-            location: "EMEA"
+            category: ["Desserts"]
         }, {
             id: 5,
-            title: "Classic Sour Cherry Pie",
-            description: "You've never had a cherry pie this good—an incredible sour cherry filling, a light and flaky crust, and vanilla ice cream to top it all off. If you can't find sour cherries, use sweet cherries and a little extra lemon juice instead.",
-            recomendation: "Sharable with clients to know how to easily make cherry pie",
-            documentId: 27091990,
+            title: "Sour cherry pie",
+            description: "You've never had a cherry pie this good—an incredible sour cherry filling, a light and flaky crust, and vanilla ice cream to top it all off.",
             timestamp: 1441366472,
-            downloadCount: 2,
+            views: 28,
             rate: 2,
             rateCount: 2,
             commentsCount: 1,
-            authorslist: [{
+            author: {
                 id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
+                username: "bflay",
+                firstName: "Bobby",
+                lastName: "Flay",
                 picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }],
+                email: "bobby.flay@sample"
+            },
             favorite: false,
-            category: "Recipes",
-            documentType: "PDF",
-            location: "EMEA"
+            category: ["Desserts", "Other"]
         }, {
             id: 6,
             title: "Chocolate cake",
-            description: "You've never had a chocolate cake this good.",
-            recomendation: "Sharable with clients to know how to easily make chocolate cake",
-            documentId: 27091990,
+            description: "Chocolate cake, chocolate frosting, but with what a difference. Peanut butter is the magic ingredient.  It is spread between the cake and the frosting.",
             timestamp: 1441366472,
-            downloadCount: 2,
+            views: 24,
             rate: 2,
             rateCount: 2,
             commentsCount: 1,
-            authorslist: [{
+            author: {
                 id: 1,
-                username: "jazagoury",
-                enabled: true,
-                firstName: "Jessica",
-                lastName: "Azagoury",
+                username: "bflay",
+                firstName: "Bobby",
+                lastName: "Flay",
                 picture: "assets/images/user-1.jpg",
-                email: "jessica.azagoury@hpe.com"
-            }],
+                email: "bobby.flay@sample"
+            },
             favorite: false,
-            category: "other",
-            documentType: "PDF",
-            location: "EMEA"
+            category: ["Desserts", "Other"]
         }];
 
         var itemsList = [{
             id: 0,
-            label: "Ice cream sandwich history"
+            label: "Fresh fruit skewers"
         }, {
             id: 1,
-            label: "Ice cream sandwich recipes"
+            label: "Gourmet dessert"
         }, {
             id: 2,
-            label: "Ice cream sandwich"
+            label: "Lemonade gelatin"
         }, {
             id: 3,
-            label: "Cherry pie recipe"
+            label: "Royal dessert"
         }, {
             id: 4,
-            label: "Cherry pie crust "
+            label: "Chocolate cake "
         }, {
             id: 5,
-            label: "Classic Sour Cherry Pie"
+            label: "Sour cherry pie"
         }];
 
         var relatedSearchItems = [{
-            label: "Pie"
+            label: "Lemonade cake"
         }, {
-            label: "Recipes"
+            label: "Raspberry Sorbet"
         }, {
-            label: "Ice cream"
+            label: "Appricot dessert"
         }, {
             label: "Ice sandwich"
         }, {
             label: "Cherry pie"
         }, {
-            label: "Lemon pie"
+            label: "Blueberry pie"
         }, {
-            label: "Ice cream cake"
+            label: "Strawberry ice cream"
         }, {
-            label: "Desserts"
+            label: "Tiramisu Toffee"
         }];
         var searchFilters = [{
             label: "Category",
             filters: [{
-                label: "Recipes",
+                label: "Healthy",
                 id: 2,
                 active: false
-            },{
-                label: "Desserts",
+            }, {
+                label: "Dessert",
                 id: 1,
                 active: false
-            },{
+            }, {
                 label: "Other",
                 id: 1,
-                active: false
-            }]
-        }, {
-            label: "Document Type",
-            filters: [{
-                label: "Web Page",
-                id: 1,
-                active: false
-            }, {
-                label: "PDF",
-                id: 2,
-                active: false
-            }, {
-                label: "Word",
-                id: 3,
-                active: false
-            }, {
-                label: "Excel",
-                id: 4,
-                active: false
-            }]
-        }, {
-            label: "Location",
-            filters: [{
-                label: "EUR",
-                id: 1,
-                active: false
-            }, {
-                label: "EMEA",
-                id: 2,
-                active: false
-            }, {
-                label: "US",
-                id: 3,
                 active: false
             }]
         }];
