@@ -1,0 +1,22 @@
+.recipe-item {
+    text-align: center;
+    img {
+        border-radius: 200px;
+    }
+    label {
+        font-family: $font-family;
+        font-size: $font-l;
+        color: $gray-darker;
+        cursor: pointer;
+        line-height: 50px;
+    }
+    article {
+        min-height: 100px;
+        line-height: 25px;
+        padding-bottom: 25px;
+    }
+    i {
+        float: right;
+        cursor: pointer;
+    }
+}
