@@ -16,8 +16,8 @@ angular.module('quickRecipes.directives')
                 $scope.options = $scope.options || {
                     max: 5,
                     isReadonly: false,
-                    stateOn: "fa fa-star",
-                    stateOff: "fa fa-star-o"
+                    stateOn: "qr-spoon",
+                    stateOff: "qr-spoon-o"
                 };
                 $scope.searchItems = SearchService.getSearchResults();
                 this.redirectTo = function(url) {
