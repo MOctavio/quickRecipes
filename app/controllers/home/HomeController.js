@@ -2,6 +2,7 @@ angular.module('quickRecipes.controllers')
     .controller('HomeController', ['$scope', '$location', 'SearchService', function($scope, $location, SearchService) {
         var documents = SearchService.getItemsList();
         $scope.selected = SearchService.getActiveSearchElement();
+        this.recipes = SearchService.getTopResults();
 
         this.redirectTo = function(url) {
             if (url) $location.url(url);

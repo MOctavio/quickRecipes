@@ -88,6 +88,7 @@ em {
 }
 .jumbotron {
     font-family: $font-family;
+    margin-bottom: $nav-height;
     h1 {
         font-size: 55px;
     }

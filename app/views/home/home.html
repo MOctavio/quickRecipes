@@ -1,4 +1,4 @@
-<header class="home-page" ng-controller="HomeController as home">
+<section class="home-page" ng-controller="HomeController as home">
     <div class="jumbotron">
         <div class="text-horizontal-center">
             <h1>
@@ -9,6 +9,10 @@
         </div>
     </div>
     <div class="container">
-        <div class="row"></div>
+        <div class="row">
+            <div class="col-md-3" ng-repeat="recipe in home.recipes" ng-class="{'col-md-offset-1':!$first}">
+                <recipe-item recipe="recipe"></recipe-item>
+            </div>
+        </div>
     </div>
-</header>
+</section>
